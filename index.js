@@ -6,6 +6,7 @@ const app = express()
 const classRoutes = require('./classRoutes.js')
 const mainRouter = require('./mainRouter.js')
 
+app.use('/cdn', express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
