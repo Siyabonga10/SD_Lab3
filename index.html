@@ -6,6 +6,20 @@
     <body>
         <h1>Class List</h1>
             <!-- 'input' is an empty element, it consists of single tag -->
+            <div class="radio-menu" id="filter-settings">
+                <label>
+                    <input type="radio" name="filter" value="name">
+                    Name
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="student-number">
+                    Student Number
+                </label>
+                <label>
+                    <input type="radio" name="filter" value="year-of-study">
+                    Year of Study
+                </label>
+            </div>
         <input type="text" id="search-text" placeholder="Filter students">
         <div id="students">
             <!-- Use this div to hold the list of students -->
