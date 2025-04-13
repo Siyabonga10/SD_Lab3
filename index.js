@@ -1,17 +1,49 @@
-const addL2HeaderButton = document.getElementById('addL2Header')
-const addHyperlink = document.getElementById('addHyperlink')
+const students = [
+  {
+    name: 'Kwezi',
+    studentNumber: 453528,
+    yearOfStudy: 4
+  },
+  {
+    name: 'Pieter',
+    studentNumber: 454345,
+    yearOfStudy: 3
+  },
+  {
+    name: 'Jade',
+    studentNumber: 678343,
+    yearOfStudy: 4
+  },
+  {
+    name: 'Kiren',
+    studentNumber: 567893,
+    yearOfStudy: 4
+  }
+]
 
-addL2HeaderButton.addEventListener('click', () => {
-  const header = document.createElement('h2')
-  const headerText = document.createTextNode('THIS IS A HEADER')
-  header.appendChild(headerText)
-  document.body.appendChild(header)
+const showStudents = document.getElementById('showStudents')
+
+showStudents.addEventListener('click', () => {
+  const studentsDiv = document.createElement('div')
+  studentsDiv.setAttribute('id', 'studentsDiv')
+  students.forEach((student) => {
+    const studentDiv = document.createElement('div')
+    const studentDetails = document.createTextNode(`Name: ${student.name}      Student Number: ${student.studentNumber}       YOS: ${student.yearOfStudy}`)
+    const editButton = document.createElement('button')
+    const editButtonText = document.createTextNode('Edit')
+    editButton.appendChild(editButtonText)
+    studentDiv.appendChild(studentDetails)
+    studentDiv.appendChild(editButton)
+    studentsDiv.appendChild(studentDiv)
+  })
+  document.body.appendChild(studentsDiv)
 })
 
-addHyperlink.addEventListener('click', () => {
-  const header = document.createElement('a')
-  header.setAttribute('href', 'google.com')
-  const headerText = document.createTextNode('THIS IS A HEADER')
-  header.appendChild(headerText)
-  document.body.appendChild(header)
+const deleteStudents = document.getElementById('deleteStudents')
+
+deleteStudents.addEventListener('click', () => {
+  const studentsDiv = document.getElementById('studentsDiv')
+  if (studentsDiv) {
+    document.body.removeChild(studentsDiv)
+  }
 })
