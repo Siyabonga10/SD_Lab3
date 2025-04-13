@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <title>Class List</title>
-        <meta charset="utf-8" />
-        <!-- defer means that the JS code is executed after the DOM is fully built -->
-        <script defer src="index.js"></script>
     </head>
     <body>
-        <h1 id="heading">Students in the School of EIE:</h1>
-        <button type="button" id="showStudents">Show students</button>
-        <button type="button" id="deleteStudents">Delete students</button>
-        <div id="studentList"></div>
+        <h1>Class List</h1>
+            <!-- 'input' is an empty element, it consists of single tag -->
+        <input type="text" id="search-text" placeholder="Filter students">
+        <div id="students">
+            <!-- Use this div to hold the list of students -->
+        </div>
+        <script src="class-list-app.js"></script>
     </body>
 </html>
